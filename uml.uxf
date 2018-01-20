@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>300</y>
+      <w>310</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>MinimaxPlayer
+--
+_+WIN_VALUE = 100: double_
+_+MAX_DEPTH = 3: int_
+--
++MinimaxPlayer(char player): ctor
++makeMove(Board board): Board
+-minimax(Board board, int depth, 
+      boolean maximizing, double alpha, 
+      double beta): double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>150</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>/AIPlayer/
+--
+#player: char
+--
++AIPlayer(char player): ctor
++makeMove(Board board): Board
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>0</y>
+      <w>240</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>TicTacToe
+--
+-input: Scanner
+--
++main(String[] args): void
+-runGame(int diff, int sym): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>360</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>RandomPlayer
+--
+--
++RandomPlayer(char player): ctor
++makeMove(Board board): Board
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>490</y>
+      <w>300</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ImmediateWinPlayer
+--
+--
++ImmediateWinPlayer(char player): ctor
++makeMove(Board board): Board
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>80</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>230</y>
+      <w>120</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>230</y>
+      <w>40</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>230</y>
+      <w>180</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>60</y>
+      <w>340</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Board
+--
+_+SIZE = 5: int_
+_+X = 'X': char_
+_+O = 'O': char_
+_+EMPTY = ' ': char_
+_+DRAW = '/': char_
+
+- board: char[][]
++ lastMoveRow: int
++ lastMoveCol: int
++ parent: Board
+--
++Board(): ctor
++Board(Board parent, char player, 
+      int moveRow, int moveCol): ctor
++result(): char
++move(char player, int row, int col): Board
++getChildren(char player): List&lt;Board&gt;
++heuristic(char player): double
++toString(): String
+_+otherPlayer(char player): char_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>40</y>
+      <w>290</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>270.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>160</y>
+      <w>280</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
